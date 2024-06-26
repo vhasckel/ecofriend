@@ -1,8 +1,12 @@
 import { Box, styled } from "@mui/material";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-import { cardContents } from "../../utils/cardContents";
-import Hero from "../../components/Hero/Hero";
 import LeafImage from "../../assets/leaf.png";
+import { cardContents } from "../../utils/cardContents";
+import { sliderSettings } from "../../utils/sliderSetings";
+import Hero from "../../components/Hero/Hero";
 import Title from "../../components/Title/Title";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import CustomButton from "../../components/CustomButton/CustomButton";
@@ -21,7 +25,6 @@ const LandingPage = () => {
 
       <BoxStyled>
         <img src={LeafImage} alt="" style={{ width: "100%" }} />
-
         <Title text={"Nossa Missão"} />
 
         <Paragraph
@@ -35,7 +38,7 @@ const LandingPage = () => {
       <BoxStyled>
         <Title text={"Como funciona?"} />
 
-        <Box>
+        <Slider {...sliderSettings}>
           {cardContents.map((content, index) => (
             <CustomCard
               key={index}
@@ -43,7 +46,7 @@ const LandingPage = () => {
               paragraph={content.paragraph}
             />
           ))}
-        </Box>
+        </Slider>
       </BoxStyled>
     </Box>
   );
