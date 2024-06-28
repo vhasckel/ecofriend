@@ -1,16 +1,23 @@
-import { Box, Card, CardContent } from "@mui/material";
+import { Box, Card, CardContent, styled } from "@mui/material";
 import Paragraph from "../Paragraph/Paragraph";
 import Subtitle from "../Subtitle/Subtitle";
 
-const CustomCard = ({ title, paragraph }) => {
+const CustomCard = ({ title, paragraph, isFunctionalities }) => {
+  const CardStyled = styled(Card)(({ theme }) => ({
+    backgroundColor: isFunctionalities
+      ? theme.palette.customColors.lightGreen
+      : "white",
+    margin: "0 10px",
+    boxShadow: isFunctionalities ? "none" : "",
+  }));
   return (
     <Box sx={{ minWidth: 275 }}>
-      <Card variant="outlined">
+      <CardStyled>
         <CardContent>
           <Subtitle text={title} />
           <Paragraph text={paragraph} />
         </CardContent>
-      </Card>
+      </CardStyled>
     </Box>
   );
 };

@@ -1,11 +1,15 @@
 import { Box, styled } from "@mui/material";
 import Slider from "react-slick";
+import SliderWrapper from "../../utils/_SlickSliderStyle";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import LeafImage from "../../assets/leaf.png";
-import { cardContents } from "../../utils/cardContents";
-import { sliderSettings } from "../../utils/sliderSetings";
+import { cardContents, userComments } from "../../utils/cardContents";
+import {
+  functionalitiesSettings,
+  userCommentsSettings,
+} from "../../utils/sliderSetings";
 import Hero from "../../components/Hero/Hero";
 import Title from "../../components/Title/Title";
 import Paragraph from "../../components/Paragraph/Paragraph";
@@ -38,12 +42,27 @@ const LandingPage = () => {
       <BoxStyled>
         <Title text={"Como funciona?"} />
 
-        <Slider {...sliderSettings}>
-          {cardContents.map((content, index) => (
+        <SliderWrapper>
+          <Slider {...functionalitiesSettings}>
+            {cardContents.map((content, index) => (
+              <CustomCard
+                key={index}
+                title={content.title}
+                paragraph={content.paragraph}
+                isFunctionalities={true}
+              />
+            ))}
+          </Slider>
+        </SliderWrapper>
+      </BoxStyled>
+
+      <BoxStyled>
+        <Slider {...userCommentsSettings}>
+          {userComments.map((content, index) => (
             <CustomCard
               key={index}
-              title={content.title}
-              paragraph={content.paragraph}
+              title={content.name}
+              paragraph={content.text}
             />
           ))}
         </Slider>
