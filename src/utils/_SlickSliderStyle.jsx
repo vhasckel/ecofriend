@@ -14,7 +14,7 @@ const SliderWrapper = styled("div")`
   .ft-slick__dots--custom {
     height: 8px;
     width: 8px;
-    background-color: #5d6f81;
+    background-color: #d5dad0;
     border-radius: 4px;
     position: relative;
   }
@@ -37,7 +37,7 @@ const SliderWrapper = styled("div")`
     .loading {
       height: 8px;
       animation: ${loading} 5s ease-in;
-      background-image: linear-gradient(270deg, #4fd15a, #03ac0e);
+      background-image: linear-gradient(270deg, #bfea7c, #9bcf53);
       display: inline-block;
       position: absolute;
       top: 0;
