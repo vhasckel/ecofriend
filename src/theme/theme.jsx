@@ -11,10 +11,14 @@ const theme = createTheme({
     customColors: {
       lightGreen: "#E7F0DC",
       mediumGreen: "#ACD793",
+      text: "#403f45",
     },
   },
   typography: {
     fontFamily: "Nunito",
+  },
+  shape: {
+    borderRadius: 20,
   },
 });
 

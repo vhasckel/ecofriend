@@ -28,7 +28,12 @@ const Header = () => {
 
           <img src={Logo} alt="Logo" style={{ height: 32 }} />
 
-          <AccountCircleRoundedIcon sx={{ fontSize: 40 }} />
+          <AccountCircleRoundedIcon
+            sx={{
+              fontSize: 40,
+              color: theme.palette.customColors.lightGreen,
+            }}
+          />
         </Stack>
       </Toolbar>
     </AppBar>

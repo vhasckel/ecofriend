@@ -4,7 +4,7 @@ import SliderWrapper from "../../utils/_SlickSliderStyle";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import LeafImage from "../../assets/leaf.png";
+import Image from "../../assets/ecology.png";
 import { cardContents, userComments } from "../../utils/cardContents";
 import {
   functionalitiesSettings,
@@ -15,11 +15,13 @@ import Title from "../../components/Title/Title";
 import Paragraph from "../../components/Paragraph/Paragraph";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomCard from "../../components/CustomCard/CustomCard";
+import Footer from "../../components/Footer/Footer";
 
 const BoxStyled = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.customColors.lightGreen,
   flexDirection: "column",
   padding: 20,
+  textAlign: "center",
 }));
 
 const LandingPage = () => {
@@ -28,7 +30,7 @@ const LandingPage = () => {
       <Hero />
 
       <BoxStyled>
-        <img src={LeafImage} alt="" style={{ width: "100%" }} />
+        <img src={Image} alt="" style={{ width: "100%" }} />
         <Title text={"Nossa Missão"} />
 
         <Paragraph
@@ -67,6 +69,7 @@ const LandingPage = () => {
           ))}
         </Slider>
       </BoxStyled>
+      <Footer />
     </Box>
   );
 };

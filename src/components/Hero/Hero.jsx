@@ -9,6 +9,7 @@ const BoxStyled = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.customColors.mediumGreen,
   flexDirection: "column",
   padding: "50px 20px 20px 20px",
+  textAlign: "center",
 }));
 
 const Hero = () => {
