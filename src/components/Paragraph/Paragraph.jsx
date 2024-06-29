@@ -3,7 +3,7 @@ import React from "react";
 
 const TypographyStyled = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
-  color: theme.palette.secondary.main,
+  color: theme.palette.customColors.text,
 }));
 
 const Paragraph = ({ text }) => {

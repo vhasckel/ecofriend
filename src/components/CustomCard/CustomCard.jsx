@@ -6,9 +6,10 @@ const CustomCard = ({ title, paragraph, isFunctionalities }) => {
   const CardStyled = styled(Card)(({ theme }) => ({
     backgroundColor: isFunctionalities
       ? theme.palette.customColors.lightGreen
-      : "white",
+      : theme.palette.customColors.mediumGreen,
     margin: "0 10px",
     boxShadow: isFunctionalities ? "none" : "",
+    textAlign: isFunctionalities ? "center" : "",
   }));
   return (
     <Box sx={{ minWidth: 275 }}>
