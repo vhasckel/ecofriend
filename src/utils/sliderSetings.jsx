@@ -1,7 +1,4 @@
-import {
-  CustomNextArrow,
-  CustomPrevArrow,
-} from "../components/CustomArrow/CustomArrow";
+import { NextArrow, PrevArrow } from "../components/CustomArrow/CustomArrow";
 
 export const functionalitiesSettings = {
   dots: true,
@@ -55,8 +52,8 @@ export const userCommentsSettings = {
   slidesToScroll: 1,
   autoplay: false,
   arrows: true,
-  prevArrow: <CustomPrevArrow />,
-  nextArrow: <CustomNextArrow />,
+  prevArrow: <PrevArrow />,
+  nextArrow: <NextArrow />,
   responsive: [
     {
       breakpoint: 1024,

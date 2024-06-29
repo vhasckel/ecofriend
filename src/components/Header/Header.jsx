@@ -26,7 +26,7 @@ const Header = () => {
         >
           <MenuMobile />
 
-          <img src={Logo} alt="Logo" style={{ height: 32 }} />
+          {/* <img src={Logo} alt="Logo" style={{ height: 32 }} /> */}
 
           <AccountCircleRoundedIcon
             sx={{
