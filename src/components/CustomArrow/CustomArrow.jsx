@@ -1,32 +1,59 @@
-const arrowStyles = {
-  display: "block",
-  background: "#b1b1b1",
+import { Box, styled } from "@mui/material";
+import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+import PropTypes from "prop-types";
+
+import theme from "../../theme/theme";
+
+const BoxStyled = styled(Box)(({ isLeft }) => ({
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
   borderRadius: "50%",
-  padding: "0px",
+  padding: "10px",
   position: "absolute",
   top: "50%",
   transform: "translateY(-50%)",
   zIndex: 1,
+  left: isLeft ? "12px" : "unset",
+  right: isLeft ? "unset" : "12px",
+}));
+
+const ArrowIcon = ({ IconComponent, isLeft, ...rest }) => (
+  <BoxStyled isLeft={isLeft}>
+    <IconComponent
+      sx={{
+        fontSize: 42,
+        color: theme.palette.primary.main,
+      }}
+      {...rest}
+    />
+  </BoxStyled>
+);
+
+ArrowIcon.propTypes = {
+  IconComponent: PropTypes.elementType.isRequired,
+  isLeft: PropTypes.bool,
 };
 
-export const CustomPrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, ...arrowStyles, left: "1px" }}
-      onClick={onClick}
-    />
-  );
+export const PrevArrow = (props) => (
+  <ArrowIcon IconComponent={ArrowBackIosRoundedIcon} isLeft={true} {...props} />
+);
+
+export const NextArrow = (props) => (
+  <ArrowIcon
+    IconComponent={ArrowForwardIosRoundedIcon}
+    isLeft={false}
+    {...props}
+  />
+);
+
+PrevArrow.propTypes = {
+  slideCount: PropTypes.number,
+  currentSlide: PropTypes.number,
 };
 
-export const CustomNextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, ...arrowStyles, right: "1px" }}
-      onClick={onClick}
-    />
-  );
+NextArrow.propTypes = {
+  slideCount: PropTypes.number,
+  currentSlide: PropTypes.number,
 };

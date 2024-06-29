@@ -4,6 +4,7 @@ import React from "react";
 const TypographyStyled = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   color: theme.palette.customColors.text,
+  lineHeight: "22px",
 }));
 
 const Paragraph = ({ text }) => {

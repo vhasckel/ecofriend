@@ -10,6 +10,7 @@ const theme = createTheme({
     },
     customColors: {
       lightGreen: "#E7F0DC",
+      cardGreen: "#c9e2bc",
       mediumGreen: "#ACD793",
       text: "#403f45",
     },

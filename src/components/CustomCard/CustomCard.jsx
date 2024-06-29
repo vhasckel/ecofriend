@@ -6,14 +6,14 @@ const CustomCard = ({ title, paragraph, isFunctionalities }) => {
   const CardStyled = styled(Card)(({ theme }) => ({
     backgroundColor: isFunctionalities
       ? theme.palette.customColors.lightGreen
-      : theme.palette.customColors.mediumGreen,
+      : theme.palette.customColors.cardGreen,
     margin: "0 10px",
-    boxShadow: isFunctionalities ? "none" : "",
-    textAlign: isFunctionalities ? "center" : "",
+    boxShadow: "none",
+    textAlign: isFunctionalities ? "center" : "left",
   }));
   return (
     <Box sx={{ minWidth: 275 }}>
-      <CardStyled>
+      <CardStyled isFunctionalities={isFunctionalities}>
         <CardContent>
           <Subtitle text={title} />
           <Paragraph text={paragraph} />
