@@ -1,5 +1,6 @@
-import { Box, Typography, Container, styled } from "@mui/material";
+import { Box, Container, Typography, styled } from "@mui/material";
 import Paragraph from "../Paragraph/Paragraph";
+import theme from "../../theme/theme";
 
 const BoxStyled = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.customColors.mediumGreen,
@@ -11,9 +12,9 @@ const Footer = () => {
   return (
     <BoxStyled component="footer">
       <Container maxWidth="lg">
-        <Paragraph
-          text={"© 2024 Recicla365. Todos os direitos reservados."}
-        ></Paragraph>
+        <Typography variant="subtitle1" color={theme.palette.customColors.text}>
+          Desenvolvido por vhasckel
+        </Typography>
       </Container>
     </BoxStyled>
   );

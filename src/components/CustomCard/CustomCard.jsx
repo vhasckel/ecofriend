@@ -1,26 +1,49 @@
-import { Box, Card, CardContent, styled } from "@mui/material";
+import { Box, Card, CardContent, Typography, styled } from "@mui/material";
+import PropTypes from "prop-types";
 import Paragraph from "../Paragraph/Paragraph";
 import Subtitle from "../Subtitle/Subtitle";
+import theme from "../../theme/theme";
 
-const CustomCard = ({ title, paragraph, isFunctionalities }) => {
-  const CardStyled = styled(Card)(({ theme }) => ({
-    backgroundColor: isFunctionalities
-      ? theme.palette.customColors.lightGreen
-      : theme.palette.customColors.cardGreen,
-    margin: "0 10px",
-    boxShadow: "none",
-    textAlign: isFunctionalities ? "center" : "left",
-  }));
-  return (
-    <Box sx={{ minWidth: 275 }}>
-      <CardStyled isFunctionalities={isFunctionalities}>
-        <CardContent>
-          <Subtitle text={title} />
-          <Paragraph text={paragraph} />
-        </CardContent>
-      </CardStyled>
-    </Box>
-  );
+const CardStyled = styled(Card)(({ theme, isFunctionalities }) => ({
+  backgroundColor: isFunctionalities
+    ? theme.palette.customColors.lightGreen
+    : theme.palette.customColors.cardGreen,
+  marginRight: "10px",
+  boxShadow: "none",
+  textAlign: isFunctionalities ? "center" : "left",
+  fontSize: isFunctionalities ? "24px" : "16px",
+  [theme.breakpoints.up("sm")]: {
+    textAlign: "left",
+  },
+}));
+
+const CustomCard = ({ subtitle, paragraph, isFunctionalities, variant }) => (
+  <Box sx={{ minWidth: 275 }}>
+    <CardStyled isFunctionalities={isFunctionalities}>
+      <CardContent>
+        <Typography
+          variant="h6"
+          fontWeight={700}
+          color={theme.palette.primary.main}
+        >
+          {subtitle}
+        </Typography>
+        <Typography variant={variant} color={theme.palette.customColors.text}>
+          {paragraph}
+        </Typography>
+      </CardContent>
+    </CardStyled>
+  </Box>
+);
+
+CustomCard.propTypes = {
+  subtitle: PropTypes.string.isRequired,
+  paragraph: PropTypes.string.isRequired,
+  isFunctionalities: PropTypes.bool,
+};
+
+CustomCard.defaultProps = {
+  isFunctionalities: false,
 };
 
 export default CustomCard;

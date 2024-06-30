@@ -21,7 +21,7 @@ const SliderWrapper = styled("div")`
 
   .slick-dots li {
     width: 8px;
-    margin: 0 2px;
+    margin: -50px 2px;
     transition: width 0.3s ease-in-out;
   }
 
@@ -32,7 +32,7 @@ const SliderWrapper = styled("div")`
 
   .slick-dots .slick-active .ft-slick__dots--custom {
     width: 56px;
-    top: 0px;
+    top: 0;
 
     .loading {
       height: 8px;

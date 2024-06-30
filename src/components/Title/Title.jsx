@@ -6,7 +6,7 @@ const TypographyStyled = styled(Typography)(({ theme }) => ({
   color: theme.palette.primary.main,
   marginBottom: theme.spacing(2),
 
-  [theme.breakpoints.up("md")]: {
+  [theme.breakpoints.up("sm")]: {
     fontSize: 52,
     maxWidth: "20ch",
   },
