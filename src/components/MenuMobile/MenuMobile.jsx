@@ -33,6 +33,7 @@ const MenuMobile = () => {
       </Button>
 
       <Popper
+        sx={{ zIndex: 1 }}
         open={open}
         anchorEl={anchorRef.current}
         role={undefined}

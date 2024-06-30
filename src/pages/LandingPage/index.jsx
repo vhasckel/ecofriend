@@ -1,4 +1,4 @@
-import { Box, styled } from "@mui/material";
+import { Box, Container, Grid, styled } from "@mui/material";
 import Slider from "react-slick";
 import SliderWrapper from "../../utils/_SlickSliderStyle";
 import "slick-carousel/slick/slick.css";
@@ -30,15 +30,31 @@ const LandingPage = () => {
       <Hero />
 
       <BoxStyled>
-        <img src={Image} alt="" style={{ width: "100%" }} />
-        <Title text={"Nossa Missão"} />
-
-        <Paragraph
-          text={
-            "O Recicla365 é uma plataforma inovadora criada para facilitar o gerenciamento de resíduos e a localização de pontos de coleta de materiais recicláveis. Nossa missão é tornar a reciclagem mais acessível e prática para todos, promovendo um ambiente mais sustentável."
-          }
-        />
-        <CustomButton text={"Quero saber mais!"} />
+        <Container>
+          <Grid container spacing={3}>
+            {/* Coluna para a imagem */}
+            <Grid item xs={12} md={6}>
+              <img src={Image} alt="" style={{ width: "100%" }} />
+            </Grid>
+            {/* Coluna para o texto */}
+            <Grid
+              item
+              xs={12}
+              md={6}
+              container
+              direction="column"
+              justifyContent="center"
+            >
+              <Title text={"Nossa Missão"} />
+              <Paragraph
+                text={
+                  "O Recicla365 é uma plataforma inovadora criada para facilitar o gerenciamento de resíduos e a localização de pontos de coleta de materiais recicláveis. Nossa missão é tornar a reciclagem mais acessível e prática para todos, promovendo um ambiente mais sustentável."
+                }
+              />
+              <CustomButton text={"Quero saber mais!"} />
+            </Grid>
+          </Grid>
+        </Container>
       </BoxStyled>
 
       <BoxStyled>

@@ -5,6 +5,11 @@ const TypographyStyled = styled(Typography)(({ theme }) => ({
   fontWeight: "bold",
   color: theme.palette.primary.main,
   marginBottom: theme.spacing(2),
+
+  [theme.breakpoints.up("md")]: {
+    fontSize: 52,
+    maxWidth: "20ch",
+  },
 }));
 
 const Title = ({ text }) => {
