@@ -15,7 +15,7 @@ const BoxStyled = styled(Box)(({ isLeft }) => ({
   top: "50%",
   transform: "translateY(-50%)",
   zIndex: 1,
-  left: isLeft ? "12px" : "unset",
+  left: isLeft ? "1px" : "unset",
   right: isLeft ? "unset" : "12px",
 }));
 

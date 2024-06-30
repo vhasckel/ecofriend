@@ -1,9 +1,10 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import CustomButton from "../CustomButton/CustomButton";
 import PropTypes from "prop-types";
 import Title from "../Title/Title";
 import Paragraph from "../Paragraph/Paragraph";
+import theme from "../../theme/theme";
 
 const BoxStyled = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.customColors.mediumGreen,
@@ -12,8 +13,9 @@ const BoxStyled = styled(Box)(({ theme }) => ({
   textAlign: "center",
   position: "relative",
 
-  [theme.breakpoints.up("md")]: {
+  [theme.breakpoints.up("sm")]: {
     paddingBottom: "150px",
+    paddingTop: "50px",
     textAlign: "left",
   },
 }));
@@ -52,15 +54,28 @@ const Hero = () => {
   return (
     <BoxStyled>
       <Container>
-        <Title text={"Recicla365: gerencie e recicle de forma inteligente"} />
+        <Box maxWidth={650}>
+          <Typography
+            variant="h3"
+            fontWeight={700}
+            color={theme.palette.primary.main}
+            mb={3}
+          >
+            Ecofriend: gerencie e recicle de forma inteligente
+          </Typography>
 
-        <Paragraph
-          text={
-            "Encontre pontos de coleta, registre suas contribuições e ajude o meio ambiente com facilidade."
-          }
-        />
+          <Typography
+            variant="h6"
+            color={theme.palette.customColors.text}
+            lineHeight={1.2}
+            mb={3}
+          >
+            Encontre pontos de coleta, registre suas contribuições e ajude o
+            meio ambiente com facilidade.
+          </Typography>
 
-        <CustomButton text={"Começar"} />
+          <CustomButton text={"Começar"} />
+        </Box>
         <BoxCustomShapeDivider>
           <svg
             data-name="Layer 1"
