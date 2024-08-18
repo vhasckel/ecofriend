@@ -10,6 +10,7 @@ export const functionalitiesSettings = {
   initialSlide: 0,
   speed: 500,
   arrows: false,
+  gap: 2,
   adaptiveHeight: true,
   customPaging: (i) => (
     <div className="ft-slick__dots--custom">
@@ -30,7 +31,7 @@ export const functionalitiesSettings = {
       breakpoint: 600,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         initialSlide: 2,
       },
     },
@@ -46,7 +47,7 @@ export const functionalitiesSettings = {
 
 export const userCommentsSettings = {
   dots: false,
-  infinite: false,
+  infinite: true,
   speed: 500,
   slidesToShow: 2,
   slidesToScroll: 1,
@@ -59,16 +60,14 @@ export const userCommentsSettings = {
       breakpoint: 1024,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 2,
-        infinite: true,
-        dots: false,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: 600,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 2,
+        slidesToScroll: 1,
         initialSlide: 2,
       },
     },
