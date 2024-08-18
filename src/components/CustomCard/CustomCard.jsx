@@ -1,7 +1,6 @@
 import { Box, Card, CardContent, Typography, styled } from "@mui/material";
 import PropTypes from "prop-types";
-import Paragraph from "../Paragraph/Paragraph";
-import Subtitle from "../Subtitle/Subtitle";
+
 import theme from "../../theme/theme";
 
 const CardStyled = styled(Card)(({ theme, isFunctionalities }) => ({
@@ -12,6 +11,7 @@ const CardStyled = styled(Card)(({ theme, isFunctionalities }) => ({
   boxShadow: "none",
   textAlign: isFunctionalities ? "center" : "left",
   fontSize: isFunctionalities ? "24px" : "16px",
+
   [theme.breakpoints.up("sm")]: {
     textAlign: "left",
   },

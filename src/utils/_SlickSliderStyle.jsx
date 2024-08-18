@@ -25,7 +25,7 @@ const SliderWrapper = styled("div")`
 
   .slick-dots li {
     width: 8px;
-    margin: -50px 2px;
+    margin: 2px;
     transition: width 0.3s ease-in-out;
   }
 

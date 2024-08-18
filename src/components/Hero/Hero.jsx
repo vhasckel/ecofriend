@@ -4,6 +4,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import PropTypes from "prop-types";
 import theme from "../../theme/theme";
 import Title from "../Title/Title";
+import CustomShapeDivider from "../CustomShapeDivider/CustomShapeDivider";
 
 const BoxStyled = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.customColors.mediumGreen,
@@ -11,41 +12,11 @@ const BoxStyled = styled(Box)(({ theme }) => ({
   paddingBottom: "50px",
   textAlign: "center",
   position: "relative",
+  paddingTop: "50px",
 
   [theme.breakpoints.up("sm")]: {
     paddingBottom: "150px",
-    paddingTop: "50px",
     textAlign: "left",
-  },
-}));
-
-const BoxCustomShapeDivider = styled(Box)(({ theme }) => ({
-  position: "absolute",
-  bottom: 0,
-  left: 0,
-  width: "100%",
-  overflow: "hidden",
-  lineHeight: 0,
-  transform: "rotate(180deg)",
-
-  "& svg": {
-    position: "relative",
-    display: "block",
-    width: "calc(100% + 1.3px)",
-    height: "100px",
-
-    [theme.breakpoints.down("sm")]: {
-      width: "calc(140% + 1.3px)",
-      height: "51px",
-    },
-    [theme.breakpoints.up("md")]: {
-      width: "calc(100% + 1.3px)",
-      height: "80px",
-    },
-  },
-
-  "& .shapefill": {
-    fill: theme.palette.customColors.lightGreen,
   },
 }));
 
@@ -68,7 +39,7 @@ const Hero = () => {
 
           <CustomButton text={"Começar"} />
         </Box>
-        <BoxCustomShapeDivider>
+        <CustomShapeDivider>
           <svg
             data-name="Layer 1"
             xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +51,7 @@ const Hero = () => {
               className="shapefill"
             ></path>
           </svg>
-        </BoxCustomShapeDivider>
+        </CustomShapeDivider>
       </Container>
     </BoxStyled>
   );

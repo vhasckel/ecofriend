@@ -9,7 +9,6 @@ const Header = () => {
 
   return (
     <AppBar
-      // elevation={0}
       position="static"
       sx={{
         backgroundColor: theme.palette.customColors.mediumGreen,
@@ -26,7 +25,7 @@ const Header = () => {
           >
             <MenuMobile />
 
-            {/* <img src={Logo} alt="Logo" style={{ height: 32 }} /> */}
+            {/* <Logo height={50} /> */}
 
             <AccountCircleRoundedIcon
               sx={{

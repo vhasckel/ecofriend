@@ -1,7 +1,7 @@
 import { Typography, styled } from "@mui/material";
 
 const TypographyStyled = styled(Typography)(({ theme }) => ({
-  fontWeight: "bold",
+  fontWeight: theme.typography.h1.fontWeight,
   color: theme.palette.primary.main,
   marginBottom: theme.spacing(2),
 }));

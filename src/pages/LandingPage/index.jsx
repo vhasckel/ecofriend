@@ -39,6 +39,7 @@ const LandingPage = () => {
               <img src={Image} alt="Ecology" style={{ width: "100%" }} />
             </Grid>
             <Grid
+              mb={2}
               item
               xs={12}
               sm={6}
@@ -63,7 +64,7 @@ const LandingPage = () => {
           </Grid>
         </BoxStyled>
 
-        <Box mb={10} height={300}>
+        <Box mb={5}>
           <Title text={"Como funciona?"} />
           <SliderWrapper>
             <Slider {...functionalitiesSettings}>
@@ -80,7 +81,7 @@ const LandingPage = () => {
           </SliderWrapper>
         </Box>
 
-        <Box>
+        <Box mb={5}>
           <Slider {...userCommentsSettings}>
             {userComments.map((content, index) => (
               <CustomCard

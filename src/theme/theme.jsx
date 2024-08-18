@@ -16,11 +16,20 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Nunito",
+    fontFamily: "Nunito, sans-serif",
+    h1: {
+      fontSize: "2rem",
+      fontWeight: 700,
+    },
+    body1: {
+      fontSize: "1rem",
+      fontWeight: 400,
+    },
   },
   shape: {
     borderRadius: 20,
   },
+  spacing: 8,
 });
 
 export default theme;
