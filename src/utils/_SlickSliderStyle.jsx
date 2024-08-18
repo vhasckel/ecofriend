@@ -11,6 +11,10 @@ const loading = keyframes`
 `;
 
 const SliderWrapper = styled("div")`
+  .slick-track {
+    display: flex;
+    gap: 10px;
+  }
   .ft-slick__dots--custom {
     height: 8px;
     width: 8px;

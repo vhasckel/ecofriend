@@ -5,6 +5,7 @@ const TypographyStyled = styled(Typography)(({ theme }) => ({
   fontWeight: "bold",
   color: theme.palette.primary.main,
   marginBottom: theme.spacing(2),
+  fontSize: 36,
 
   [theme.breakpoints.up("sm")]: {
     fontSize: 52,

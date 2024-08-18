@@ -19,14 +19,8 @@ import Footer from "../../components/Footer/Footer";
 import theme from "../../theme/theme";
 
 const BoxStyled = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.customColors.lightGreen,
-  flexDirection: "column",
-  // paddingBottom: 50,
-  height: 500,
-  textAlign: "center",
-
-  [theme.breakpoints.up("sm")]: {
-    textAlign: "left",
+  [theme.breakpoints.down("sm")]: {
+    textAlign: "center",
   },
 }));
 
@@ -39,8 +33,7 @@ const LandingPage = () => {
           backgroundColor: theme.palette.customColors.lightGreen,
         }}
       >
-        {/* <BoxStyled> */}
-        <Box mb={3}>
+        <BoxStyled mb={3}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <img src={Image} alt="Ecology" style={{ width: "100%" }} />
@@ -53,17 +46,10 @@ const LandingPage = () => {
               direction="column"
               justifyContent="center"
             >
+              <Title text={"Nossa Missão"} />
               <Typography
-                variant="h3"
-                fontWeight={700}
-                color={theme.palette.primary.main}
-                mb={3}
-              >
-                Nossa Missão
-              </Typography>
-              <Typography
+                variant="h6"
                 mb={5}
-                variant="h5"
                 color={theme.palette.customColors.text}
               >
                 O Recicla365 é uma plataforma inovadora criada para facilitar o
@@ -75,10 +61,8 @@ const LandingPage = () => {
               <CustomButton text={"Quero saber mais!"} />
             </Grid>
           </Grid>
-        </Box>
-        {/* </BoxStyled> */}
+        </BoxStyled>
 
-        {/* <BoxStyled> */}
         <Box mb={10} height={300}>
           <Title text={"Como funciona?"} />
           <SliderWrapper>
@@ -95,10 +79,8 @@ const LandingPage = () => {
             </Slider>
           </SliderWrapper>
         </Box>
-        {/* </BoxStyled> */}
 
-        {/* <BoxStyled> */}
-        <Box mb={10}>
+        <Box>
           <Slider {...userCommentsSettings}>
             {userComments.map((content, index) => (
               <CustomCard
@@ -109,7 +91,6 @@ const LandingPage = () => {
             ))}
           </Slider>
         </Box>
-        {/* </BoxStyled> */}
       </Container>
       <Footer />
     </>

@@ -27,6 +27,8 @@ const MenuMobile = () => {
         onClick={handleToggle}
         sx={(theme) => ({
           color: theme.palette.customColors.lightGreen,
+          minWidth: "unset",
+          padding: 0,
         })}
       >
         <DragHandleIcon sx={{ fontSize: 40 }} />

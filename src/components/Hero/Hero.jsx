@@ -1,10 +1,9 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Typography, useTheme } from "@mui/material";
 import { styled } from "@mui/system";
 import CustomButton from "../CustomButton/CustomButton";
 import PropTypes from "prop-types";
-import Title from "../Title/Title";
-import Paragraph from "../Paragraph/Paragraph";
 import theme from "../../theme/theme";
+import Title from "../Title/Title";
 
 const BoxStyled = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.customColors.mediumGreen,
@@ -55,14 +54,7 @@ const Hero = () => {
     <BoxStyled>
       <Container>
         <Box maxWidth={650}>
-          <Typography
-            variant="h3"
-            fontWeight={700}
-            color={theme.palette.primary.main}
-            mb={3}
-          >
-            Ecofriend: gerencie e recicle de forma inteligente
-          </Typography>
+          <Title text={"Ecofriend: gerencie e recicle de forma inteligente"} />
 
           <Typography
             variant="h6"
