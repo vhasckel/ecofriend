@@ -30,6 +30,17 @@ const theme = createTheme({
     borderRadius: 20,
   },
   spacing: 8,
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        menuButton: {
+          color: "#E7F0DC",
+          fontSize: "1rem",
+          fontWeight: 700,
+        },
+      },
+    },
+  },
 });
 
 export default theme;

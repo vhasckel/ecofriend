@@ -1,8 +1,16 @@
-import { AppBar, Stack, Toolbar, Container, useTheme } from "@mui/material";
+import {
+  AppBar,
+  Stack,
+  Toolbar,
+  Container,
+  useTheme,
+  Box,
+} from "@mui/material";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 
 import Logo from "../../assets/logo.png";
 import MenuMobile from "../MenuMobile/MenuMobile";
+import MenuDesktop from "../MenuDesktop/MenuDesktop";
 
 const Header = () => {
   const theme = useTheme();
@@ -16,7 +24,8 @@ const Header = () => {
     >
       <Container disableGutters>
         <Toolbar>
-          <Stack
+          <Box
+            display="flex"
             direction="row"
             justifyContent="space-between"
             alignItems="center"
@@ -24,6 +33,7 @@ const Header = () => {
             width="100%"
           >
             <MenuMobile />
+            <MenuDesktop />
 
             {/* <Logo height={50} /> */}
 
@@ -33,7 +43,7 @@ const Header = () => {
                 color: theme.palette.customColors.lightGreen,
               }}
             />
-          </Stack>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

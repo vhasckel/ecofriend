@@ -17,7 +17,7 @@ const MenuMobile = () => {
     useMenu();
 
   return (
-    <Box>
+    <Box sx={{ display: { xs: "block", sm: "none" } }}>
       <Button
         ref={anchorRef}
         id="composition-button"
