@@ -6,11 +6,11 @@ import {
   useTheme,
   Box,
 } from "@mui/material";
-import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 
-import Logo from "../../assets/logo.png";
-import MenuMobile from "../MenuMobile/MenuMobile";
+import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import MenuDesktop from "../MenuDesktop/MenuDesktop";
+import DropDownMenu from "../DropDownMenu/DropDownMenu";
+import DragHandleIcon from "@mui/icons-material/DragHandle";
 
 const Header = () => {
   const theme = useTheme();
@@ -32,16 +32,18 @@ const Header = () => {
             spacing={2}
             width="100%"
           >
-            <MenuMobile />
+            <DropDownMenu
+              icon={DragHandleIcon}
+              menuItems={["Sobre", "Funcionalidades", "Contato"]}
+              sxProps={{ display: { xs: "block", sm: "none" } }}
+            />
             <MenuDesktop />
 
             {/* <Logo height={50} /> */}
 
-            <AccountCircleRoundedIcon
-              sx={{
-                fontSize: 40,
-                color: theme.palette.customColors.lightGreen,
-              }}
+            <DropDownMenu
+              icon={AccountCircleRoundedIcon}
+              menuItems={["Entrar", "Cadastrar"]}
             />
           </Box>
         </Toolbar>

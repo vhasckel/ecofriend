@@ -1,16 +1,16 @@
 import "./App.css";
-import Header from "./components/Header/Header";
-import { Outlet } from "react-router";
-import { ThemeProvider } from "@emotion/react";
-import theme from "./theme/theme";
-import LandingPage from "./pages/LandingPage";
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header/Header.jsx";
+import Footer from "./components/Footer/Footer.jsx";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "./theme/theme.jsx";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Header />
-      <LandingPage />
-      {/* <Outlet /> */}
+      <Outlet />
+      <Footer />
     </ThemeProvider>
   );
 }

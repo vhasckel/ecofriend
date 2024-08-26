@@ -1,21 +1,19 @@
 import { Box, Container, Grid, Typography, styled } from "@mui/material";
+import { cardContents, userComments } from "../../utils/cardContents";
+import {
+  functionalitiesSettings,
+  userCommentsSettings,
+} from "../../utils/sliderSetings";
 import Slider from "react-slick";
 import SliderWrapper from "../../utils/_SlickSliderStyle";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Image from "../../assets/ecology.png";
-import { cardContents, userComments } from "../../utils/cardContents";
-import {
-  functionalitiesSettings,
-  userCommentsSettings,
-} from "../../utils/sliderSetings";
 import Hero from "../../components/Hero/Hero";
 import Title from "../../components/Title/Title";
-
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomCard from "../../components/CustomCard/CustomCard";
-import Footer from "../../components/Footer/Footer";
 import theme from "../../theme/theme";
 
 const BoxStyled = styled(Box)(({ theme }) => ({
@@ -93,7 +91,6 @@ const LandingPage = () => {
           </Slider>
         </Box>
       </Container>
-      <Footer />
     </>
   );
 };

@@ -1,6 +1,5 @@
 import { Box, Container, Typography, styled } from "@mui/material";
 import CustomShapeDividerFooter from "../CustomShapeDividerFooter/CustomShapeDividerFooter";
-import Title from "../Title/Title";
 import theme from "../../theme/theme";
 
 const BoxStyled = styled(Box)(({ theme }) => ({

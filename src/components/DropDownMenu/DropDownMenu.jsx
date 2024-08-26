@@ -8,30 +8,38 @@ import {
   MenuList,
   Box,
 } from "@mui/material";
-import DragHandleIcon from "@mui/icons-material/DragHandle";
+import { useTheme } from "@emotion/react";
 
 import useMenu from "../../hooks/useMenu";
 
-const MenuMobile = () => {
+const DropDownMenu = ({
+  icon: IconComponent,
+  menuItems,
+  sxProps,
+  buttonId = "composition-button",
+  menuId = "composition-menu",
+  ariaLabel = "menu button",
+}) => {
+  const theme = useTheme();
   const { open, anchorRef, handleToggle, handleClose, handleListKeyDown } =
     useMenu();
 
   return (
-    <Box sx={{ display: { xs: "block", sm: "none" } }}>
+    <Box sx={sxProps}>
       <Button
         ref={anchorRef}
-        id="composition-button"
-        aria-controls={open ? "composition-menu" : undefined}
+        id={buttonId}
+        aria-controls={open ? menuId : undefined}
         aria-expanded={open ? "true" : undefined}
         aria-haspopup="true"
         onClick={handleToggle}
-        sx={(theme) => ({
+        sx={{
           color: theme.palette.customColors.lightGreen,
           minWidth: "unset",
           padding: 0,
-        })}
+        }}
       >
-        <DragHandleIcon sx={{ fontSize: 40 }} />
+        <IconComponent sx={{ fontSize: 40 }} />
       </Button>
 
       <Popper
@@ -55,13 +63,15 @@ const MenuMobile = () => {
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}
-                  id="composition-menu"
-                  aria-labelledby="composition-button"
+                  id={menuId}
+                  aria-labelledby={buttonId}
                   onKeyDown={handleListKeyDown}
                 >
-                  <MenuItem onClick={handleClose}>Sobre</MenuItem>
-                  <MenuItem onClick={handleClose}>Funcionalidades</MenuItem>
-                  <MenuItem onClick={handleClose}>Contato</MenuItem>
+                  {menuItems.map((item, index) => (
+                    <MenuItem key={index} onClick={handleClose}>
+                      {item}
+                    </MenuItem>
+                  ))}
                 </MenuList>
               </ClickAwayListener>
             </Paper>
@@ -72,4 +82,4 @@ const MenuMobile = () => {
   );
 };
 
-export default MenuMobile;
+export default DropDownMenu;
