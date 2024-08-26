@@ -5,6 +5,7 @@ import App from "./App.jsx";
 
 import LandingPage from "./pages/LandingPage/index.jsx";
 import "./index.css";
+import Login from "./pages/Login/index.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <LandingPage />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },

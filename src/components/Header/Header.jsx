@@ -44,6 +44,7 @@ const Header = () => {
             <DropDownMenu
               icon={AccountCircleRoundedIcon}
               menuItems={["Entrar", "Cadastrar"]}
+              links={["/login", "/register"]}
             />
           </Box>
         </Toolbar>

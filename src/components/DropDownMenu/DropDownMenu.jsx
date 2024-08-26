@@ -8,6 +8,7 @@ import {
   MenuList,
   Box,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 import { useTheme } from "@emotion/react";
 
 import useMenu from "../../hooks/useMenu";
@@ -18,7 +19,7 @@ const DropDownMenu = ({
   sxProps,
   buttonId = "composition-button",
   menuId = "composition-menu",
-  ariaLabel = "menu button",
+  links,
 }) => {
   const theme = useTheme();
   const { open, anchorRef, handleToggle, handleClose, handleListKeyDown } =
@@ -68,7 +69,12 @@ const DropDownMenu = ({
                   onKeyDown={handleListKeyDown}
                 >
                   {menuItems.map((item, index) => (
-                    <MenuItem key={index} onClick={handleClose}>
+                    <MenuItem
+                      key={item}
+                      component={links ? Link : "div"}
+                      to={links ? links[index] : undefined}
+                      onClick={handleClose}
+                    >
                       {item}
                     </MenuItem>
                   ))}
