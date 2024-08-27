@@ -1,37 +1,39 @@
 import React from "react";
 import {
-  TextField,
   Button,
   Container,
   Typography,
   Paper,
   Box,
+  styled,
 } from "@mui/material";
+import LoginFormFields from "../../components/LoginFormFields/LoginFormFields";
 
-const Login = () => {
+const LoginPage = () => {
+  const ContainerStyled = styled(Container)(({ theme }) => ({
+    height: "90vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  }));
+
+  const PaperStyled = styled(Paper)(({ theme }) => ({
+    padding: theme.spacing(3),
+    maxWidth: 400,
+    width: "100%",
+    margin: theme.spacing(2),
+    backgroundColor: theme.palette.customColors.lightGreen,
+  }));
+
   return (
-    <Container component="main" maxWidth="xs">
-      <Paper elevation={3} sx={{ padding: 3 }}>
+    <ContainerStyled component="main" maxWidth="xs">
+      <PaperStyled elevation={3}>
         <Typography variant="h5" align="center">
           Entrar
         </Typography>
         <Box component="form" sx={{ mt: 1 }}>
-          <TextField
-            margin="normal"
-            fullWidth
-            id="email"
-            name="email"
-            label="Email"
-            type="email"
-          />
-          <TextField
-            margin="normal"
-            fullWidth
-            id="password"
-            name="password"
-            label="Senha"
-            type="password"
-          />
+          <LoginFormFields />
           <Button
             fullWidth
             variant="contained"
@@ -41,9 +43,9 @@ const Login = () => {
             Entrar
           </Button>
         </Box>
-      </Paper>
-    </Container>
+      </PaperStyled>
+    </ContainerStyled>
   );
 };
 
-export default Login;
+export default LoginPage;
