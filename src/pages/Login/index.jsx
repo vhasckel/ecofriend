@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import LoginFormFields from "../../components/LoginFormFields/LoginFormFields";
 import { useAuth } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const ContainerStyled = styled(Container)(({ theme }) => ({
   height: "90vh",
@@ -22,20 +23,26 @@ const PaperStyled = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
   maxWidth: 400,
   width: "100%",
-  margin: theme.spacing(2),
-  backgroundColor: theme.palette.customColors.lightGreen,
+  // backgroundColor: theme.palette.customColors.lightGreen,
 }));
 
 const LoginPage = () => {
   const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
-    const userData = { name: "user name", email };
-    const token = "fake-token";
-    login(userData, token);
+    try {
+      // Simula a chamada de login e obtenção de token
+      const userData = { name: "user name", email };
+      const token = "fake-token"; // Substitua pelo token real após o login
+      await login(userData, token); // Atualiza o estado e redireciona
+      navigate("/");
+    } catch (error) {
+      console.error("Erro ao fazer login:", error);
+    }
   };
 
   return (

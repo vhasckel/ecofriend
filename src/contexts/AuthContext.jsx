@@ -1,38 +1,28 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [authState, setAuthState] = useState({
-    user: null,
-    token: null,
-  });
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    Boolean(localStorage.getItem("authToken"))
+  );
 
-  const login = (userData, token) => {
-    setAuthState({
-      user: userData,
-      token,
-    });
+  const login = async (userData, token) => {
+    // Simulação de salvamento do token e do estado de autenticação
     localStorage.setItem("authToken", token);
+    window.location.href = "/";
   };
 
   const logout = () => {
-    setAuthState({
-      user: null,
-      token: null,
-    });
     localStorage.removeItem("authToken");
+    setIsAuthenticated(false);
   };
 
-  const isAuthenticated = () => !!authState.token;
-
   return (
-    <AuthContext.Provider value={{ authState, login, logout, isAuthenticated }}>
+    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+export const useAuth = () => useContext(AuthContext);
