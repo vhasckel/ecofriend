@@ -1,7 +1,12 @@
 import { TextField, Box } from "@mui/material";
 
-const LoginFormFields = () => (
-  <Box component="form" sx={{ mt: 1 }}>
+const LoginFormFields = ({
+  email,
+  onEmailChange,
+  password,
+  onPasswordChange,
+}) => (
+  <Box sx={{ mt: 1 }}>
     <TextField
       margin="normal"
       fullWidth
@@ -9,6 +14,8 @@ const LoginFormFields = () => (
       name="email"
       label="Email"
       type="email"
+      value={email}
+      onChange={onEmailChange}
     />
     <TextField
       margin="normal"
@@ -17,6 +24,8 @@ const LoginFormFields = () => (
       name="password"
       label="Senha"
       type="password"
+      value={password}
+      onChange={onPasswordChange}
     />
   </Box>
 );
