@@ -23,7 +23,6 @@ const PaperStyled = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
   maxWidth: 400,
   width: "100%",
-  // backgroundColor: theme.palette.customColors.lightGreen,
 }));
 
 const LoginPage = () => {
